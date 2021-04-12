@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <div class="gold_count_container">
+        <p>Your Gold:</p>
+    </div>
+
+    <div class="goldcount"><p>{{gold_count}}</p></div>
+
+    <div class="box_selection_container">
+        <form action="/process_money" method="post">
+            <div class="selection_box">
+                <h4>Farm</h4>
+                <p>(earn/lose 1-8 gold)</p>
+                <button type="submit" class="btn btn-outline-dark" name="button" value="farm">Get Gold</button>
+            </div>
+            <div class="selection_box">
+                    <h4>Cave</h4>
+                    <p>(earn/lose 0-10 gold)</p>
+                    <button type="submit" class="btn btn-outline-dark" name="button" value="cave">Get Gold</button>
+
+            </div>
+            <div class="selection_box">
+                    <h4>Loot People</h4>
+                    <p>(earn/lose 2-5 gold)</p>
+                    <button type="submit" class="btn btn-outline-dark" name="button" value="loot">Get Gold</button>
+
+            </div>
+            <div class="selection_box">
+                    <h4>Casino</h4>
+                    <p>(earn/lose 10-100 gold)</p>
+                    <button type="submit" class="btn btn-outline-dark" name="button" value="casino">Get Gold</button>
+
+            </div>
+            <a href="/restart" class="startover"><button type="button" class="btn btn-outline-danger">Start Over</button></a>
+        </form>
+</body>
+</html>
